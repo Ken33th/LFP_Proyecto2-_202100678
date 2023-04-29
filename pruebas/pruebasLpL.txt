@@ -1,3 +1,0 @@
-CrearBD ejemplo = nueva CrearBD();
-EliminarBD elimina = nueva EliminarBD();
-CrearColeccion nombreCualquiera = nueva CrearColeccion("NombreColeccion");

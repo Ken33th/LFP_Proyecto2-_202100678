@@ -1,0 +1,6 @@
+CrearBD ejemplo = nueva CrearBD();
+EliminarBD elimina = nueva EliminarBD();
+CrearColeccion nombreCualquiera = nueva CrearColeccion("NombreColeccion");
+EliminarColeccion eliminacolec = nueva EliminarColeccion("NombreColeccion");
+BuscarTodo todo = nueva BuscarTodo ("NombreColeccion");
+BuscarUnico todo = nueva BuscarUnico ("NombreColeccion");

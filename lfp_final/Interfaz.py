@@ -1,16 +1,22 @@
 from tkinter import *
+import codecs
 from tkinter import filedialog, messagebox
+from common.analizador import Scanner
 
 class App:
     def __init__(self, master):
         self.master = master
         self.master.title("Analizador MongoDB")
+        self.area_sentencias = FALSE
+        self.contenido = ""
         
-        #widgets
+        # Frame para alinear a la derecha
+        self.frame = Frame(self.master)
+        self.frame.pack(fill=BOTH, expand=YES)
         
         # Crear area de texto
-        self.text_area = Text(self.master)
-        self.text_area.pack(fill=BOTH, expand=YES)
+        self.text_area = Text(self.frame)
+        self.text_area.pack(side=LEFT, fill=BOTH, expand=YES)
         self.text_area.bind('<Motion>', self.mostrar_posicion_cursor) # Llamada a la función mostrar_posicion_cursor cuando el cursor se mueve
 
         # Crear etiqueta para mostrar la posición del cursor
@@ -58,16 +64,30 @@ class App:
         if messagebox.askyesno("Guardar", "¿Desea guardar los cambios antes de crear un nuevo archivo?"):
             self.guardar_archivo()
         self.text_area.delete("1.0", END)
+        if self.area_sentencias == TRUE:
+            self.generated_text_area.pack_forget()
+            self.area_sentencias = FALSE
 
     def abrir_archivo(self):
         if messagebox.askyesno("Guardar", "¿Desea guardar los cambios antes de abrir un archivo?"):
             self.guardar_archivo()
         archivo = filedialog.askopenfile(initialdir="/", title="Abrir archivo", filetypes=(("Archivos de texto", "*.txt"),))
         if archivo:
-            self.text_area.delete("1.0", END)
-            self.text_area.insert(END, archivo.read())
-            archivo.close()
-            self.archivo_actual = archivo.name
+            try:
+                self.contenido = archivo.read().strip()
+                self.text_area.delete("1.0", END)
+                self.text_area.insert(END, self.contenido)
+            except UnicodeDecodeError:
+                archivo.close()
+                archivo = codecs.open(archivo.name, encoding='utf-8', errors='replace')
+                self.contenido = archivo.read().strip()
+                self.text_area.delete("1.0", END)
+                self.text_area.insert(END, self.contenido)
+            finally:
+                archivo.close()
+        if self.area_sentencias == TRUE:
+            self.generated_text_area.pack_forget()
+            self.area_sentencias = FALSE
 
     def guardar_archivo(self):
         if not self.text_area.get("1.0", END).strip():
@@ -98,11 +118,6 @@ class App:
             with open(archivo, "w") as f:
                 f.write(self.text_area.get("1.0", END))
 
-
-    def generar_sentencias(self):
-        # TODO: Implementar esta funcion
-        pass
-
     def ver_tokens(self):
         # TODO: Implementar esta funcion
         pass
@@ -116,8 +131,26 @@ class App:
         pass
     
     def generar_sentencias_mongodb(self):
-        # TODO: Implementar esta funcion
-        pass
+        if self.contenido == "":
+            messagebox.showerror("Error", f"No se ha cargado ningun archivo para generar sentencias")
+        else:
+            if self.area_sentencias == False:
+                # Crear segunda area de texto para sentencias generadas
+                self.area_sentencias = TRUE
+                self.generated_text_area = Text(self.frame, state=NORMAL)
+                self.generated_text_area.pack(side=LEFT, fill=BOTH, expand=YES)
+                scanner = Scanner(self.contenido)
+                tokens = scanner.scan()
+                print(tokens)
+                self.generated_text_area.insert(END, tokens)
+            else:
+                self.contenido_area = self.text_area.get("1.0", "end-1c")
+                self.generated_text_area.delete("1.0", END)
+                print(self.contenido_area)
+                scanner = Scanner(self.contenido_area)
+                tokens = scanner.scan()
+                print(tokens)
+                self.generated_text_area.insert(END, tokens)
 
 root = Tk()
 ventana = App(root)
