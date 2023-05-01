@@ -60,6 +60,7 @@ Ahora, para crear la interfaz gráfica se hizo uso de la libreria Tkinter por lo
 Ahora ya la ventana esta creada de la siguiente manera:
 
 ![image](https://user-images.githubusercontent.com/109756579/235403218-e842a680-f17c-4199-9279-c9e31d12d423.png)
+
 ![image](https://user-images.githubusercontent.com/109756579/235403255-3aaf66f8-b949-4b8f-93f2-0719467e9095.png)
 
 para mostrar la posición del cursor se creo la suguiente función 
@@ -89,3 +90,7 @@ Como cada una de las opciones debe hacer algo entonces se crearon distintas func
 ![salir](https://user-images.githubusercontent.com/109756579/235403912-0fee209b-b478-49b7-b39a-37ac9286d9af.png)
 
 y en las demas opciones seran de una sola elección la cual hará lo que se le indica como tal, por ejemplo que se genere la sentencia, o que muestre los tokens cargados y también que muestre los errores que hay en el archivo cargado.
+
+Aqui la que es para hacer la traducción:
+
+![generarSentencias](https://user-images.githubusercontent.com/109756579/235404433-c6cdff49-b7c6-4253-88c1-d6da73443055.png)
