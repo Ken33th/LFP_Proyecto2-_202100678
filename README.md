@@ -94,3 +94,64 @@ y en las demas opciones seran de una sola elección la cual hará lo que se le i
 Aqui la que es para hacer la traducción:
 
 ![generarSentencias](https://user-images.githubusercontent.com/109756579/235404433-c6cdff49-b7c6-4253-88c1-d6da73443055.png)
+
+
+Gramatica Libre de Contexto:
+
+LEXICO:
+    CrearDB
+    EliminarDB
+    CrearColeccion
+    EliminarColeccion
+    InsertarUnico
+    ActualizarUnico
+    EliminarUnico
+    BuscarTodo
+    BuscarUnico
+    nueva
+    (
+    )
+    ;
+    =
+    ID -> [a-z_A-Z_][a-z_A-Z_0-9]*
+    NUMERO -> [0-9]+
+    STRING -> "[^"]*"
+    IGNORE -> \t\r
+    COMENTARIOS -> //.*
+                | /\*([^*]|\*+[^*/])*\*+/
+    "
+
+SINTACTICO:
+    init : instrucciones
+
+    instrucciones : instruccion instrucciones
+                | instruccion
+
+    instruccion : crearDB ;
+                | eliminarDB ; 
+                | crearColeccion ;
+                | eliminarColeccion ;
+                | insertarUnico ;
+                | actualizarUnico ;
+                | eliminarUnico ;
+                | buscarTodo ;
+                | buscarUnico ;
+
+    crearDB : CrearDB ID = nueva CrearDB ( )
+
+    eliminarDB : EliminarDB ID = nueva EliminarDB ( )
+
+    crearColeccion : CrearColeccion ID = nueva CrearColeccion ( STRING )
+
+    eliminarColeccion : EliminarColeccion ID = nueva EliminarColeccion ( STRING )
+
+    insertarUnico : InsertarUnico ID = nueva InsertarUnico ( STRING , STRING )
+
+    actualizarUnico : ActualizarUnico ID = nueva ActualizarUnico ( STRING , STRING )
+
+    eliminarUnico : EliminarUnico ID = nueva EliminarUnico ( STRING )
+
+    buscarTodo : BuscarTodo ID = nueva BuscarTodo ( STRING )
+
+    buscarUnico : BuscarUnico ID = nueva BuscarUnico ( STRING )
+
