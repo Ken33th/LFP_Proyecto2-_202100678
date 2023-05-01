@@ -11,19 +11,40 @@ A continuación se le dara una serie de instrucciones para poder ejecutar el sit
   - Url del repositorio: https://github.com/Ken33th/LFP_Proyecto2-_202100678
 - Luego de obtener el archivo comprimido (*.rar*) con los archivos dentro, debemos de descomprimir y este nos generará una carpeta con el siguiente nombre "LFP_Proyecto2-_202100678-master" 
 
-![image](https://user-images.githubusercontent.com/109756579/235396224-708a9445-8f21-43e9-9266-992b1c077e91.png)
+![image](https://user-images.githubusercontent.com/109756579/235397017-1533ab2d-a282-445b-a261-6adede6fb6d2.png)
 
 
-- Luego iniciamos Visual Studio Code y arrastramos la carpeta que descargamos hacia los archivos para abrirla
 
-- A continuación debemos seleccionar cualquier archivo, luego ir a la cinta de opciones y buscar **Terminal** y seleccionamos la opcion **New Terminal** o bien de manera abreviada presionamos la combinación de teclas (Ctrl + Shift + p).
+- Luego iniciamos Visual Studio Code y arrastramos la carpeta que descargamos hacia los archivos para abrirla (o tambien puede abrirla agregando al area de trabajo).
 
-- Nos ubicamos en el Backend usando el comando `cd Backend` y luego escribimos `npm run rundev`, esto nos abrira un puerto en el host local y así podremos ver el proyecto. ![image](https://user-images.githubusercontent.com/109756579/199173527-4bd09591-059c-482d-8307-e3bcbe20925d.png)
+- Si no quiere abrir Visual Studio Code, de igual forma puede abrirlo normal desde los archivos que se descargaron antenriormente, solamtene debe seleccionar y hacer doble click sobre "interfaz" 
 
-- Luego nos ubicamos en la parte donde esta el **index.html** y usando la extension de Live Server la iniciamos con el Go live, y esto nos abrira el proyecto en un navegador predeterminado.
+![image](https://user-images.githubusercontent.com/109756579/235398542-7ab4020d-9aba-45ee-8751-a78848760e4d.png)
 
-- Para poder acceder al **Albúm PANINI virtual** primeramente debemos iniciar sesión, luego de iniciar sesión nos mostrará la pagina principal donde estan listados todos los jugadores de los diferentes equipos. ![image](https://user-images.githubusercontent.com/109756579/199173707-f6b08e4d-0d2e-41cc-bf45-2e3c45a4ef56.png)
+y a partir de ahi puede interactuar con la aplicación en la cual puede:
 
+- Abrir un archivo y cargarlo en el area de texto:
+![image](https://user-images.githubusercontent.com/109756579/235399007-53b0a909-0178-4950-a6cb-d4f640fe97e9.png)
+
+![image](https://user-images.githubusercontent.com/109756579/235399436-c3572005-a043-4da8-b217-61549bd1a58e.png)
+
+
+- Luego analizar y generar las sentencias MongoDB:
+
+![image](https://user-images.githubusercontent.com/109756579/235399488-2517462b-bfbf-4dfd-b947-a1d99afe385c.png)
+
+Al seleccionar la opcion de "Generar sentencias MongoDB" se expande la ventana y se muestra el lenguaje traducido
+
+![image](https://user-images.githubusercontent.com/109756579/235399533-f2ca93da-1c34-49cf-a8db-7480895101d1.png)
+
+
+- Para guardar, entonces tiene 2 opciones, si desea guardar el codigo modificado o guardarlo como un nombre nuevo y encima de otro tipo si desea:
+
+![image](https://user-images.githubusercontent.com/109756579/235400416-b3054115-252b-4706-b495-db903067750f.png)
+
+y si desea abrir un nuevo archivo le preguntara si desea guardar los cambios realizados previamente y 2 opciones: si y no
+
+![image](https://user-images.githubusercontent.com/109756579/235400667-7f642d56-f8b4-45bc-8d2d-8e6757852007.png)
 
 
 
