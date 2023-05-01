@@ -24,6 +24,7 @@ A continuación se le dara una serie de instrucciones para poder ejecutar el sit
 y a partir de ahi puede interactuar con la aplicación en la cual puede:
 
 - Abrir un archivo y cargarlo en el area de texto:
+- 
 ![image](https://user-images.githubusercontent.com/109756579/235399007-53b0a909-0178-4950-a6cb-d4f640fe97e9.png)
 
 ![image](https://user-images.githubusercontent.com/109756579/235399436-c3572005-a043-4da8-b217-61549bd1a58e.png)
