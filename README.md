@@ -11,7 +11,7 @@ A continuación se le dara una serie de instrucciones para poder ejecutar el sit
   - Url del repositorio: https://github.com/Ken33th/LFP_Proyecto2-_202100678
 - Luego de obtener el archivo comprimido (*.rar*) con los archivos dentro, debemos de descomprimir y este nos generará una carpeta con el siguiente nombre "LFP_Proyecto2-_202100678-master" 
 
-![Guardado](https://user-images.githubusercontent.com/109756579/199172852-f7411d28-1638-4cf2-bb94-1597e1a00564.png)
+![image](https://user-images.githubusercontent.com/109756579/235396224-708a9445-8f21-43e9-9266-992b1c077e91.png)
 
 
 - Luego iniciamos Visual Studio Code y arrastramos la carpeta que descargamos hacia los archivos para abrirla
